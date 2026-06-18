@@ -1,11 +1,34 @@
+version: '3.8'
+
 services:
   shop:
-    build: .
+    # For production, this will be overridden by CI/CD to use ECR image
+    # For local development, uncomment the build line and comment the image line
+    image: atlas-tekstil:latest  # Will be replaced by CI/CD with ECR image
+    # build: .  # Uncomment for local development
+    
     ports:
       - "3000:3000"
+    
+    container_name: atlas-tekstil
+    
     environment:
       - PORT=3000
-      - ADMIN_USER=admin
-      - ADMIN_PASS=admin123
-      - TOKEN_SECRET=local-dev-secret-change-me
+      - NODE_ENV=${NODE_ENV:-production}
+      - ADMIN_USER=${ADMIN_USER:-admin}
+      - ADMIN_PASS=${ADMIN_PASS:-admin123}
+      - TOKEN_SECRET=${TOKEN_SECRET:-change-this-secret-in-production}
+    
     restart: unless-stopped
+    
+    # Uncomment for persistent data
+    # volumes:
+    #   - ./data:/app/data
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

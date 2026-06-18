@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  shop:
+    build: .
+    ports:
+      - "3000:3000"
+    
+    container_name: atlas-tekstil-dev
+    
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+      - ADMIN_USER=admin
+      - ADMIN_PASS=admin123
+      - TOKEN_SECRET=local-dev-secret-change-me
+    
+    restart: unless-stopped
+    
+    volumes:
+      - .:/app
+      - /app/node_modules
+    
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
