@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  AWS_REGION: us-east-1  # Change to your AWS region
+  AWS_REGION: ap-southeast-2  # Change to your AWS region
   ECR_REPOSITORY: atlas-tekstil  # Your ECR repository name
   EC2_INSTANCE_IP: ${{ secrets.EC2_INSTANCE_IP }}
   EC2_USER: ${{ secrets.EC2_USER }}
