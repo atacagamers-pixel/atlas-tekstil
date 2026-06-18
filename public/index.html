@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Tekstil — Ulgurji kiyim-kechak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="brand">
+      <span class="dot"></span>
+      <span>Atlas Tekstil<small>Ulgurji kiyim-kechak</small></span>
+    </a>
+    <nav class="nav-actions">
+      <a href="#catalog" class="nav-link">Katalog</a>
+      <a href="/admin" class="nav-link">Admin</a>
+      <button class="cart-btn" id="openCart">Savatcha <span class="cart-count" id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Ulgurji buyurtmalar · 2026 kolleksiyasi</p>
+      <h1 class="serif">Sifatli kiyim, <em>ishonchli</em> yetkazib berish.</h1>
+      <p>Biz tayyor kiyim-kechak mahsulotlarini do‘konlar va distribyutorlar uchun ulgurji narxlarda taklif qilamiz. Katalogdan tanlang, savatchaga qo‘shing va buyurtma bering — qolganini biz hal qilamiz.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num serif" id="statProducts">—</div><div class="lbl">Mahsulot turi</div></div>
+      <div class="stat"><div class="num serif">48s</div><div class="lbl">Yetkazib berish</div></div>
+      <div class="stat"><div class="num serif">12</div><div class="lbl">Mintaqaviy ombor</div></div>
+    </div>
+  </section>
+
+  <main class="catalog" id="catalog">
+    <div class="catalog-head">
+      <h2 class="serif">Katalog</h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div class="grid" id="productGrid">
+      <p class="empty-state">Mahsulotlar yuklanmoqda…</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Atlas Tekstil MChJ · Toshkent, O‘zbekiston</span>
+    <span>Bulutda joylashtirilgan · NodeJS + Docker + AWS</span>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-head">
+      <h3 class="serif">Savatcha</h3>
+      <button class="close-btn" id="closeCart">&times;</button>
+    </div>
+    <div class="drawer-body" id="cartBody"></div>
+    <div class="drawer-foot" id="cartFoot" style="display:none">
+      <div class="total-row"><span>Jami</span><span id="cartTotal">0 so‘m</span></div>
+      <div class="field"><label>Ismingiz</label><input type="text" id="custName" placeholder="To‘liq ism" /></div>
+      <div class="field"><label>Telefon</label><input type="text" id="custPhone" placeholder="+998 90 000 00 00" /></div>
+      <div class="field"><label>Kompaniya (ixtiyoriy)</label><input type="text" id="custCompany" placeholder="Kompaniya nomi" /></div>
+      <button class="checkout-btn" id="checkoutBtn">Buyurtmani rasmiylashtirish</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/js/shop.js"></script>
+</body>
+</html>

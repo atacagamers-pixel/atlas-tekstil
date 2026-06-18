@@ -1,0 +1,68 @@
+[
+  {
+    "id": "p001",
+    "name": "Klassik Oq Ko'ylak",
+    "category": "Ko'ylaklar",
+    "price": 85000,
+    "stock": 240,
+    "color": "#E8E2D4",
+    "description": "100% paxta, ofis uchun klassik kesim. Ulgurji partiyalar uchun.",
+    "image": "/images/klassik-oq-ko'ylak.webp",
+    "createdAt": "2026-01-10T09:00:00.000Z"
+  },
+  {
+    "id": "p002",
+    "name": "Denim Jinsi Shim",
+    "category": "Shimlar",
+    "price": 145000,
+    "stock": 180,
+    "color": "#3B5266",
+    "description": "Mustahkam denim mato, to'g'ri kesim. Barcha o'lchamlar mavjud.",
+    "image": "/images/denim-jinsi-shim.webp",
+    "createdAt": "2026-01-11T09:00:00.000Z"
+  },
+  {
+    "id": "p003",
+    "name": "Trikotaj Sviter",
+    "category": "Ustki kiyim",
+    "price": 165000,
+    "stock": 95,
+    "color": "#9C6B3F",
+    "description": "Issiq jun aralashmasi, kuz-qish mavsumi uchun.",
+    "image": "/images/trikotaj-sviter.webp",
+    "createdAt": "2026-01-12T09:00:00.000Z"
+  },
+  {
+    "id": "p004",
+    "name": "Sport Futbolka",
+    "category": "Futbolkalar",
+    "price": 55000,
+    "stock": 420,
+    "color": "#C75B39",
+    "description": "Nafas oluvchi mato, kundalik kiyim. Yuqori aylanmali tovar.",
+    "image": "/images/sport-futbolka.webp",
+    "createdAt": "2026-01-13T09:00:00.000Z"
+  },
+  {
+    "id": "p005",
+    "name": "Charm Kamar",
+    "category": "Aksessuarlar",
+    "price": 70000,
+    "stock": 150,
+    "color": "#4A3B30",
+    "description": "Tabiiy charm, metall to'g'ali. Erkaklar uchun.",
+    "image": "/images/charm-kamar.webp",
+    "createdAt": "2026-01-14T09:00:00.000Z"
+  },
+  {
+    "id": "p006",
+    "name": "Yengil Bahor Kurtkasi",
+    "category": "Ustki kiyim",
+    "price": 220000,
+    "stock": 60,
+    "color": "#5B6E58",
+    "description": "Suv o'tkazmaydigan yuza, bahor-kuz uchun ideal.",
+    "image": "/images/yengil-bahor-kurtkasi.webp",
+    "createdAt": "2026-01-15T09:00:00.000Z"
+  }
+]

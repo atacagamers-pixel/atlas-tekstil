@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Tekstil — Admin panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <!-- LOGIN -->
+  <div class="login-wrap" id="loginView">
+    <div class="login-card">
+      <div class="brand" style="margin-bottom:24px"><span class="dot"></span><span>Atlas Tekstil<small>Admin panel</small></span></div>
+      <h1 class="serif">Tizimga kirish</h1>
+      <p>Mahsulotlar va buyurtmalarni boshqarish uchun kiring.</p>
+      <div class="field"><label>Login</label><input type="text" id="loginUser" value="admin" /></div>
+      <div class="field"><label>Parol</label><input type="password" id="loginPass" placeholder="••••••••" /></div>
+      <button class="btn-primary" style="width:100%;margin-top:8px" id="loginBtn">Kirish</button>
+      <p class="hint">Demo: admin / admin123</p>
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="admin-shell" id="adminView" style="display:none">
+    <aside class="sidebar">
+      <div class="brand"><span class="dot"></span><span>Atlas Tekstil<small>Admin</small></span></div>
+      <span class="side-link active" data-tab="dashboard">Boshqaruv paneli</span>
+      <span class="side-link" data-tab="products">Mahsulotlar</span>
+      <span class="side-link" data-tab="orders">Buyurtmalar</span>
+      <a href="/" class="side-link">Do‘konni ko‘rish ↗</a>
+      <span class="side-link logout" id="logoutBtn">Chiqish</span>
+    </aside>
+
+    <main class="admin-main">
+      <!-- Dashboard -->
+      <section class="panel active" id="tab-dashboard">
+        <div class="admin-topbar"><h1 class="serif">Boshqaruv paneli</h1></div>
+        <div class="stats-grid" id="statsGrid"></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Oxirgi buyurtmalar</th><th>Mijoz</th><th>Jami</th><th>Holat</th></tr></thead>
+            <tbody id="recentOrders"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Products -->
+      <section class="panel" id="tab-products">
+        <div class="admin-topbar">
+          <h1 class="serif">Mahsulotlar</h1>
+          <button class="btn-primary" id="addProductBtn">+ Yangi mahsulot</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Rang</th><th>Nomi</th><th>Turkum</th><th>Narx</th><th>Zaxira</th><th>Amal</th></tr></thead>
+            <tbody id="productsTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Orders -->
+      <section class="panel" id="tab-orders">
+        <div class="admin-topbar"><h1 class="serif">Buyurtmalar</h1></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>Mijoz</th><th>Mahsulotlar</th><th>Jami</th><th>Holat</th></tr></thead>
+            <tbody id="ordersTable"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Product modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <h2 class="serif" id="modalTitle">Yangi mahsulot</h2>
+      <input type="hidden" id="editId" />
+      <div class="field"><label>Nomi</label><input type="text" id="pName" /></div>
+      <div class="field"><label>Turkum</label><input type="text" id="pCategory" placeholder="Ko‘ylaklar, Shimlar…" /></div>
+      <div class="field"><label>Narx (so‘m)</label><input type="number" id="pPrice" /></div>
+      <div class="field"><label>Zaxira (dona)</label><input type="number" id="pStock" /></div>
+      <div class="field"><label>Rang (HEX)</label><input type="text" id="pColor" value="#C75B39" /></div>
+      <div class="field"><label>Tavsif</label><input type="text" id="pDesc" /></div>
+      <div class="modal-actions">
+        <button class="icon-btn" id="cancelModal">Bekor qilish</button>
+        <button class="btn-primary" id="saveProduct">Saqlash</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
